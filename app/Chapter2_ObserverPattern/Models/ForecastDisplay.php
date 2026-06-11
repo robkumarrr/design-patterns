@@ -16,9 +16,11 @@ class ForecastDisplay implements IObserver, IDisplay
         $this->weatherData->registerObserver($this);
     }
 
-    public function update() : void {
+    public function update() : array {
         $this->lastPressure = $this->currentPressure;
         $this->currentPressure = $this->weatherData->getPressure();
+
+        return $this->display();
     }
 
     public function display() : array {
