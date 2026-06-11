@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Chapter2_ObserverPattern\Models;
+
+use App\Chapter2_ObserverPattern\Interfaces\IDisplay;
+use App\Chapter2_ObserverPattern\Interfaces\IObserver;
+
+class ForecastDisplay implements IObserver, IDisplay
+{
+    private float $currentPressure = 29.92;
+    private float $lastPressure;
+    private WeatherData $weatherData;
+
+    public function __construct(WeatherData $weatherData) {
+        $this->weatherData = $weatherData;
+        $this->weatherData->registerObserver($this);
+    }
+
+    public function update() : void {
+        $this->lastPressure = $this->currentPressure;
+        $this->currentPressure = $this->weatherData->getPressure();
+    }
+
+    public function display() : array {
+        $pressureInfo = [
+            "pressure" => $this->currentPressure
+        ];
+
+        if ($this->currentPressure > $this->lastPressure) {
+            $pressureInfo["message"] = "Improving weather on the way!";
+        } else if ($this->currentPressure === $this->lastPressure) {
+            $pressureInfo["message"] = "More of the same";
+        } else {
+            $pressureInfo["message"] = "Watch out for cooler, rainy weather";
+        }
+
+        return $pressureInfo;
+    }
+
+}
