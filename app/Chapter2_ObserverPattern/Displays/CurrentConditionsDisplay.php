@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Chapter2_ObserverPattern\Models;
+namespace App\Chapter2_ObserverPattern\Displays;
 
-use App\Chapter2_ObserverPattern\Interfaces\IObserver;
 use App\Chapter2_ObserverPattern\Interfaces\IDisplay;
+use App\Chapter2_ObserverPattern\Interfaces\IObserver;
+use App\Chapter2_ObserverPattern\Models\WeatherData;
 
 class CurrentConditionsDisplay implements IObserver, IDisplay
 {
