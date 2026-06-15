@@ -13,12 +13,13 @@ class WeatherData extends Model implements ISubject
     private float $humidity;
     private float $pressure;
 
-    public function registerObserver(IObserver $o) : void {
-        $this->observers[] = $o;
+    public function attachObserver(IObserver $class) : void {
+        $this->observers[] = $class;
     }
 
     public function removeObserver(IObserver $o) : void {
-        $this->observers = array_filter($this->observers, [$o]);
+        $this->observers = array_filter($this->observers,
+        fn(IObserver $observer) => $observer !== $o);
     }
 
     public function notifyObservers() : void {

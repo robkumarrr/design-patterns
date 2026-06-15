@@ -14,7 +14,7 @@ class CurrentConditionsDisplay implements IObserver, IDisplay
 
     public function __construct(WeatherData $weatherData) {
         $this->weatherData = $weatherData;
-        $this->weatherData->registerObserver($this);
+        $this->weatherData->attachObserver($this);
     }
 
     public function update() : array {

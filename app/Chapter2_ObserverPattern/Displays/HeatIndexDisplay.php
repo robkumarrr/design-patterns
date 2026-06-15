@@ -12,7 +12,7 @@ class HeatIndexDisplay implements IObserver, IDisplay
     private WeatherData $weatherData;
     public function __construct(WeatherData $weatherData) {
         $this->weatherData = $weatherData;
-        $this->weatherData->registerObserver($this);
+        $this->weatherData->attachObserver($this);
     }
 
     public function update() : array {
