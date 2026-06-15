@@ -11,7 +11,7 @@ class StatisticsDisplay implements IObserver, IDisplay
     private float $maxTemperature = 0.0;
     private float $minTemperature = 200;
     private float $temperatureSum = 0.0;
-    private int $numReadings;
+    private int $numReadings = 0;
     private WeatherData $weatherData;
 
     public function __construct(WeatherData $weatherData) {
