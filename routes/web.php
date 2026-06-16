@@ -9,7 +9,8 @@ Route::get('/', function () {
 
 Route::get('/duck', [StrategyController::class, 'index']);
 
-Route::get('/weather/current-conditions', [ObserverController::class, 'currentConditions']);
-Route::get('/weather/forecast', [ObserverController::class, 'forecast']);
-Route::get('/weather/heat-index', [ObserverController::class, 'heatIndex']);
-Route::get('/weather/statistics', [ObserverController::class, 'statistics']);
+Route::get('/weather', [ObserverController::class, 'index'])->name('weather');
+Route::get('/weather/current-conditions', [ObserverController::class, 'currentConditions'])->name('weather.current-conditions');
+Route::get('/weather/forecast', [ObserverController::class, 'forecast'])->name('weather.forecast');
+Route::get('/weather/heat-index', [ObserverController::class, 'heatIndex'])->name('weather.heat-index');
+Route::get('/weather/statistics', [ObserverController::class, 'statistics'])->name('weather.statistics');

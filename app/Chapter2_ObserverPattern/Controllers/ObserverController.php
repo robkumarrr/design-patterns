@@ -13,6 +13,7 @@ class ObserverController extends Controller
 {
     public function index()
     {
+        return view('weather.index');
     }
 
     public function currentConditions() {
