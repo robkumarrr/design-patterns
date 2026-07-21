@@ -10,16 +10,16 @@ abstract class Pizza
     public array $toppings;
 
     public function prepare(): void {
-        echo "Preparing" . $this->name . "...";
+        echo "<br>Preparing " . $this->name . "...<br>";
     }
     public function bake(): void {
-        echo "Baking" . $this->name . "...";
+        echo "Baking " . $this->name . "...<br>";
     }
     public function cut(): void {
-        echo "Cutting" . $this->name . "...";
+        echo "Cutting " . $this->name . "...<br>";
     }
     public function box(): void {
-        echo "Boxing" . $this->name . "...";
+        echo "Boxing " . $this->name . "...<br>";
     }
     public function getName(): string {
         return $this->name;

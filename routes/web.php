@@ -17,3 +17,4 @@ Route::get('/weather/current-conditions', [ObserverController::class, 'currentCo
 Route::get('/weather/forecast', [ObserverController::class, 'forecast'])->name('weather.forecast');
 Route::get('/weather/heat-index', [ObserverController::class, 'heatIndex'])->name('weather.heat-index');
 Route::get('/weather/statistics', [ObserverController::class, 'statistics'])->name('weather.statistics');
+Route::get('/pizza',[\App\Chapter4_FactoryPattern\Controllers\PizzaController::class, 'index'])->name('pizza.index');

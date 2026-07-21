@@ -2,15 +2,15 @@
 
 namespace App\Chapter4_FactoryPattern\Models;
 
-class PizzaPizzaPizzaStore extends PizzaStore
+class PizzaPizzaPizzaPizzaStore extends PizzaStore
 {
     public function createPizza($type): Pizza
     {
         if ($type === "pepperoni")
         {
-            return new PizzaPizzaPepperoniIPizza();
+            return new PizzaPizzaPizzaPepperoniIPizza();
         } else  {
-            return new PizzaPizzaCheeseIPizza();
+            return new PizzaPizzaPizzaCheeseIPizza();
         }
     }
 
