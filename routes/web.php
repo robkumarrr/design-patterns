@@ -3,6 +3,7 @@
 use App\Chapter1_StrategyPattern\Controllers\StrategyController;
 use App\Chapter3_DecoratorPattern\Controllers\DecoratorController;
 use App\Chapter4_FactoryPattern\Controllers\PizzaController;
+use App\Chapter5_SingletonPattern\Controllers\SingletonController;
 use Illuminate\Support\Facades\Route;
 use App\Chapter2_ObserverPattern\Controllers\ObserverController;
 use App\Chapter6_CommandPattern\Controllers\RemoteController;
@@ -20,4 +21,5 @@ Route::get('/weather/forecast', [ObserverController::class, 'forecast'])->name('
 Route::get('/weather/heat-index', [ObserverController::class, 'heatIndex'])->name('weather.heat-index');
 Route::get('/weather/statistics', [ObserverController::class, 'statistics'])->name('weather.statistics');
 Route::get('/pizza',[PizzaController::class, 'index'])->name('pizza.index');
+Route::get('/singleton', [SingletonController::class, 'index'])->name('singleton.index');
 Route::get('/remote', [RemoteController::class, 'index'])->name('remote');
