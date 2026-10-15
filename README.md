@@ -72,6 +72,26 @@ Each pattern is encapsulated within its own namespace under the `app/` directory
 * **Example:** Text Formatting (Dynamically adding bold, italic, or custom formats to text).
 * **Route:** `/decorator`
 
+### [Chapter 4: Factory Pattern](app/Chapter4_FactoryPattern)
+* **Concept:** Defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+* **Example:** Pizza Stores (Each `PizzaStore` subclass decides which regional style of pizza to create).
+* **Route:** `/pizza`
+
+### [Chapter 5: Singleton Pattern](app/Chapter5_SingletonPattern)
+* **Concept:** Ensures a class has only one instance and provides a global point of access to it.
+* **Example:** Music Service (Laravel's service container binds `IMusicService` as a singleton, instead of a hand-rolled `getInstance()`).
+* **Route:** `/singleton`
+
+### [Chapter 6: Command Pattern](app/Chapter6_CommandPattern)
+* **Concept:** Encapsulates a request as an object, letting you parameterize clients with different requests, queue them, and support undo.
+* **Example:** Remote Control (Programmable slots for lights and a stereo, with undo and a `NoCommand` null object).
+* **Route:** `/remote`
+
+### [Chapter 7: Adapter Pattern](app/Chapter7_AdapterPattern)
+* **Concept:** Converts the interface of a class into another interface the client expects, letting classes work together that otherwise couldn't due to incompatible interfaces.
+* **Example:** Duck/Turkey (A `TurkeyAdapter` lets a turkey be used anywhere a duck is expected).
+* **Route:** `/adapter`
+
 [⬆ Back to Top](#-table-of-contents)
 
 ---
@@ -101,7 +121,13 @@ When adding a new Design Pattern, follow the modular structure used in previous 
    - `Interfaces/`: For defining contracts (crucial for design patterns!).
    - `Models/`: For concrete implementations of the pattern.
    - `Behaviours/` or `Components/`: If the pattern requires specific isolated logic.
-3. **Routing:** Add your demonstration routes to `routes/web.php` and group them logically.
+3. **Routing:** Add your demonstration routes to `routes/web.php` in their own chapter group, with a matching URL prefix and route name prefix:
+   ```php
+   // Chapter 6: Command Pattern
+   Route::prefix('remote')->name('remote.')->controller(RemoteController::class)->group(function () {
+       Route::get('/', 'index')->name('index');
+   });
+   ```
 
 ### Documentation Standards
 
