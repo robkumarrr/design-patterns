@@ -7,6 +7,7 @@ use App\Chapter5_SingletonPattern\Controllers\SingletonController;
 use Illuminate\Support\Facades\Route;
 use App\Chapter2_ObserverPattern\Controllers\ObserverController;
 use App\Chapter6_CommandPattern\Controllers\RemoteController;
+use App\Chapter7_AdapterPattern\Controllers\AdapterController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +24,4 @@ Route::get('/weather/statistics', [ObserverController::class, 'statistics'])->na
 Route::get('/pizza',[PizzaController::class, 'index'])->name('pizza.index');
 Route::get('/singleton', [SingletonController::class, 'index'])->name('singleton.index');
 Route::get('/remote', [RemoteController::class, 'index'])->name('remote');
+Route::get('/adapter', [AdapterController::class, 'index'])->name('adapter');
