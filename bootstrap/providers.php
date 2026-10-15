@@ -1,7 +1,6 @@
 <?php
 
-use App\Providers\AppServiceProvider;
-
 return [
-    AppServiceProvider::class,
+    App\Providers\AppServiceProvider::class,
+    \App\Chapter5_SingletonPattern\Providers\Ch5SingletonProvider::class,
 ];
