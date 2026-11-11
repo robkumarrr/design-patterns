@@ -7,6 +7,7 @@ use App\Chapter4_FactoryPattern\Controllers\PizzaController;
 use App\Chapter5_SingletonPattern\Controllers\SingletonController;
 use App\Chapter6_CommandPattern\Controllers\RemoteController;
 use App\Chapter7_AdapterPattern\Controllers\AdapterController;
+use App\Chapter7_FacadePattern\Controllers\FacadeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -49,5 +50,10 @@ Route::prefix('remote')->name('remote.')->controller(RemoteController::class)->g
 
 // Chapter 7: Adapter Pattern
 Route::prefix('adapter')->name('adapter.')->controller(AdapterController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+});
+
+// Chapter 7: Facade Pattern
+Route::prefix('facade')->name('facade.')->controller(FacadeController::class)->group(function () {
     Route::get('/', 'index')->name('index');
 });
