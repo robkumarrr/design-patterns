@@ -97,6 +97,11 @@ Each pattern is encapsulated within its own namespace under the `app/` directory
 * **Example:** Home Theater (A `HomeTheaterFacade` turns a dozen calls to the amp, projector, lights, screen, player and popcorn popper into `watchMovie()` and `endMovie()`). Not the same thing as Laravel's `Illuminate\Support\Facades`, which are static proxies to the service container.
 * **Route:** `/facade`
 
+### [Chapter 8: Template Method Pattern](app/Chapter8_TemplatePattern)
+* **Concept:** Defines the skeleton of an algorithm in a method, deferring some steps to subclasses, so they can redefine certain steps without changing the algorithm's structure.
+* **Example:** Caffeine Beverages (`CaffeineBeverage::prepareRecipe()` is a `final` recipe that boils water, brews, pours and adds condiments; `Coffee` and `Tea` fill in `brew()` and `addCondiments()`, and the `customerWantsCondiments()` hook decides whether condiments are added).
+* **Route:** `/template`
+
 [⬆ Back to Top](#-table-of-contents)
 
 ---
