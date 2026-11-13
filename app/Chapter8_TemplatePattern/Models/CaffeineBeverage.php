@@ -6,11 +6,11 @@ abstract class CaffeineBeverage
 {
     public final function prepareRecipe(): string
     {
-        $response = $this->boilWater();
-        $response .= $this->brew();
-        $response .= $this->pourInCup();
+        $response = $this->boilWater().'<br>';
+        $response .= $this->brew().'<br>';
+        $response .= $this->pourInCup().'<br>';
         if ($this->customerWantsCondiments()) {
-            $response .= $this->addCondiments();
+            $response .= $this->addCondiments().'<br>';
         }
 
         return $response;
