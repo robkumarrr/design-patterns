@@ -92,6 +92,11 @@ Each pattern is encapsulated within its own namespace under the `app/` directory
 * **Example:** Duck/Turkey (A `TurkeyAdapter` lets a turkey be used anywhere a duck is expected).
 * **Route:** `/adapter`
 
+### [Chapter 7: Facade Pattern](app/Chapter7_FacadePattern)
+* **Concept:** Provides a unified, simplified interface to a set of interfaces in a subsystem, making the subsystem easier to use.
+* **Example:** Home Theater (A `HomeTheaterFacade` turns a dozen calls to the amp, projector, lights, screen, player and popcorn popper into `watchMovie()` and `endMovie()`). Not the same thing as Laravel's `Illuminate\Support\Facades`, which are static proxies to the service container.
+* **Route:** `/facade`
+
 [⬆ Back to Top](#-table-of-contents)
 
 ---
